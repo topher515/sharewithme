@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}| {{filename}}{% endblock %}
+
+{% block content %}
+	<div class="file box">
+		<h1><a href="{{url}}">{{ name }}</a></h1>
+		{% if thumbnail_url %}
+		<p><a href="{{url}}"><img src="{{thumbnail_url}}=s300"></a></p>
+		{% endif %}
+		<p>{{ size_in_kb }} kb &bull; {{ creation }}</p>
+		<h2><a href="/">Upload more stuff</a></h2>
+	</div>
+{% endblock %}

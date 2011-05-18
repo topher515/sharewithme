@@ -1,0 +1,87 @@
+<html>
+<head>
+	<title>{% block title %}Share.me{% endblock %}</title>
+	
+	<style>
+	body {
+		font-size: 12px;
+		font-family:sans-serif;
+		color: #003333;
+	}
+	.mini-title {
+		height: 4em;
+		position: absolute;
+		top: -4em;
+		left: 0em;
+	}
+	.mini-title > * {
+		display: inline-block;
+		padding-left: 1em;
+	}
+	.content-wrapper {
+		margin: auto;
+		width: 720px;
+		font-size: 12px;
+		font-family:sans-serif;
+		text-align: center;
+		margin-top: 2em;
+		min-height: 500px;
+	}
+	.content {
+		padding: 1em;
+		vertical-align: middle;
+		height: auto;
+		background-color: #EEEEE0;
+		border-radius: 1em;
+		display: inline-block;
+		position: relative;
+		width: 640px;
+	}
+	.content-aligner {
+		height:100%;
+		display: inline-block;
+		vertical-align:middle;
+		width: 1px;
+	}
+	img {
+		border: 1px solid white;
+		outline: 1px solid black;
+	}
+	table tr td {
+		padding: 1em;
+		max-width: 150px;
+		overflow: hidden;
+	}
+	#fileupload {
+		border: 1px dashed #333;
+		padding: 1em;
+	}
+	a {
+		color: #446;
+	}
+	a:hover {
+		color: #442;
+	}
+	</style>
+	
+	{% block css %}
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/base/jquery-ui.css" id="theme">
+	{% endblock %}
+	
+	
+	{% block js %}
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+	{% endblock %}
+
+</head>
+<body>
+	<div class="content-wrapper">
+		<div class="content">
+			<div class="mini-title"><h1>Share.me</h1><p>Crap you want to send to your friends.</p></div>
+		{% block content %}{% endblock %}
+		</div>
+		<div class="content-aligner"></div>
+	</div>
+</body>
+</html>
