@@ -54,9 +54,10 @@ class UserData(db.Model):
 	
 	@staticmethod
 	def int_to_key_name(i):
+		if i == 0: return '0'
 		key_name = []
 		while i > 0:
 			index = i % len(VALID_KEY_CHARS)
 		 	i = i / len(VALID_KEY_CHARS)
-			key_name.append(VALID_KEY_CHARS[index])
+			key_name.insert(0,VALID_KEY_CHARS[index])
 		return ''.join(key_name)
